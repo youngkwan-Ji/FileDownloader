@@ -30,7 +30,6 @@ class ViewController: UIViewController {
         
         let fileName = url.lastPathComponent
         fileDownLoadPopup = FileDownLoadPopup.init(url: urlStr, fileName: fileName)
-        
         fileDownLoadPopup?.show()
     }
     

@@ -24,7 +24,7 @@ class NetworkService : NSObject {
 	///   - fileName: 파일명
 	func requestFromFileURL(url : String, fileName : String){
 		self.fileName = fileName
-		let urlString = url + fileName
+		let urlString = url
 		let session : URLSession = URLSession.init(configuration: .default, delegate: self, delegateQueue: nil)
 		
 		let url = URL(string:urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
