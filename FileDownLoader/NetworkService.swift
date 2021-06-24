@@ -1,5 +1,5 @@
 //
-//  FileDownLoader.swift
+//  NetworkService.swift
 //  iOS_UTILL
 //
 //  Created by 영관 on 2018. 7. 24..
@@ -8,15 +8,7 @@
 
 import Foundation
 
-
-/// 팝업뷰로 연결을 위한 Delegate
-protocol FileDownLoadDelegate {
-	func didFinishDownWithLoaction(location : String?)
-	func didCompleteWithError(error : String?)
-	func didreciveDataLenght(percentage : Float, size : Float)
-}
-
-class FileDownLoader : NSObject {
+class NetworkService : NSObject {
 	var fileName : String?
 	var delegate : FileDownLoadDelegate?
 	
@@ -45,8 +37,8 @@ class FileDownLoader : NSObject {
 	}
 }
 
-extension FileDownLoader : URLSessionDownloadDelegate{
-	
+//MARK: - URLSessionDownloadDelegate
+extension NetworkService : URLSessionDownloadDelegate{
 	/// 요청 완료 시
 	///
 	/// - Parameters:

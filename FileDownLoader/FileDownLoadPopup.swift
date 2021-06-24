@@ -9,6 +9,14 @@
 import Foundation
 import UIKit
 
+
+/// PopupView  Delegate
+protocol FileDownLoadDelegate {
+    func didFinishDownWithLoaction(location : String?)
+    func didCompleteWithError(error : String?)
+    func didreciveDataLenght(percentage : Float, size : Float)
+}
+
 class FileDownLoadPopup: UIView {
 	var basePopupView = UIView.init()
 	var cancelButton : UIButton?
@@ -17,7 +25,7 @@ class FileDownLoadPopup: UIView {
 	var progressBar : UIProgressView?
 	var naviVC : UINavigationController?
 	
-	var downloader : FileDownLoader?
+	var networkService : NetworkService?
 	var url : String?
 	var fileName : String?
 	var location : String?
@@ -27,14 +35,14 @@ class FileDownLoadPopup: UIView {
 	/// - Parameters:
 	///   - url: 파일 다운로드 URL
 	///   - fileName: 다운받을 파일명
-	@objc init(url : String, fileName : String) {
+	@objc init(url : String, fileName : String? = "Not Found FileName") {
 		super.init(frame: UIScreen.main.bounds)
 		self.backgroundColor = UIColor.black.withAlphaComponent(0.1)
 		self.url = url
 		self.fileName = fileName
 		
-		downloader = FileDownLoader.init(delegate: self)
-		downloader?.fileName = fileName
+        networkService = NetworkService.init(delegate: self)
+        networkService?.fileName = fileName
 		
 		setBasePopupView()
 		setMessageAndProgressView()
@@ -52,7 +60,7 @@ class FileDownLoadPopup: UIView {
 			return
 		}
 		
-		downloader?.requestFromFileURL(url: url!, fileName: fileName!)
+        networkService?.requestFromFileURL(url: url!, fileName: fileName!)
 		app.window?.rootViewController?.view.addSubview(self)
 	}
 	
@@ -66,7 +74,7 @@ class FileDownLoadPopup: UIView {
 		basePopupView.layer.cornerRadius = 7.0
 	}
 	
-	/// 팝업뷰 안에 레이블, 버튼 세팅
+	/// 팝업뷰  레이블, 버튼 세팅
 	private func setMessageAndProgressView(){
 		lblFileName = UILabel.init(frame: CGRect.init(x: basePopupView.frame.size.width / 14,
 													  y: basePopupView.frame.size.height / 12,

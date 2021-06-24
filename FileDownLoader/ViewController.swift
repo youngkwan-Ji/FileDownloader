@@ -10,7 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
-	override func viewDidLoad() {
+    var fileDownLoadPopup : FileDownLoadPopup?
+    @IBOutlet weak var tfFileURL: UITextField!
+    
+    override func viewDidLoad() {
 		super.viewDidLoad()
 		// Do any additional setup after loading the view, typically from a nib.
 	}
@@ -20,6 +23,16 @@ class ViewController: UIViewController {
 		// Dispose of any resources that can be recreated.
 	}
 
-
+    @IBAction func sendRequest(_ sender: Any) {
+        guard let urlStr = tfFileURL.text ,let url = URL.init(string: urlStr) else {
+            return
+        }
+        
+        let fileName = url.lastPathComponent
+        fileDownLoadPopup = FileDownLoadPopup.init(url: urlStr, fileName: fileName)
+        
+        fileDownLoadPopup?.show()
+    }
+    
 }
 

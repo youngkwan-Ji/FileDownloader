@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C266E824226D7D9600717469 /* YKFileLoadPopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C266E822226D7D9600717469 /* YKFileLoadPopViewController.swift */; };
-		C266E825226D7D9600717469 /* FileDownLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = C266E823226D7D9600717469 /* FileDownLoader.swift */; };
-		C266E829226D7EAD00717469 /* YKDownLoadPopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C266E828226D7EAD00717469 /* YKDownLoadPopView.swift */; };
+		C266E824226D7D9600717469 /* FileDownLoadPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C266E822226D7D9600717469 /* FileDownLoadPopup.swift */; };
+		C266E825226D7D9600717469 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C266E823226D7D9600717469 /* NetworkService.swift */; };
 		C2B6DCD52109A2760016AB4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B6DCD42109A2760016AB4E /* AppDelegate.swift */; };
 		C2B6DCD72109A2760016AB4E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2B6DCD62109A2760016AB4E /* ViewController.swift */; };
 		C2B6DCDA2109A2760016AB4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2B6DCD82109A2760016AB4E /* Main.storyboard */; };
@@ -18,9 +17,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C266E822226D7D9600717469 /* YKFileLoadPopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YKFileLoadPopViewController.swift; sourceTree = "<group>"; };
-		C266E823226D7D9600717469 /* FileDownLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDownLoader.swift; sourceTree = "<group>"; };
-		C266E828226D7EAD00717469 /* YKDownLoadPopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YKDownLoadPopView.swift; sourceTree = "<group>"; };
+		C266E822226D7D9600717469 /* FileDownLoadPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDownLoadPopup.swift; sourceTree = "<group>"; };
+		C266E823226D7D9600717469 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		C2B6DCD12109A2760016AB4E /* FileDownLoader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FileDownLoader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2B6DCD42109A2760016AB4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C2B6DCD62109A2760016AB4E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,14 +39,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		C266E82A226D80C500717469 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				C266E828226D7EAD00717469 /* YKDownLoadPopView.swift */,
-			);
-			path = Components;
-			sourceTree = "<group>";
-		};
 		C2B6DCC82109A2760016AB4E = {
 			isa = PBXGroup;
 			children = (
@@ -68,11 +58,10 @@
 		C2B6DCD32109A2760016AB4E /* FileDownLoader */ = {
 			isa = PBXGroup;
 			children = (
-				C266E822226D7D9600717469 /* YKFileLoadPopViewController.swift */,
-				C266E82A226D80C500717469 /* Components */,
 				C2B6DCD42109A2760016AB4E /* AppDelegate.swift */,
 				C2B6DCD62109A2760016AB4E /* ViewController.swift */,
-				C266E823226D7D9600717469 /* FileDownLoader.swift */,
+				C266E822226D7D9600717469 /* FileDownLoadPopup.swift */,
+				C266E823226D7D9600717469 /* NetworkService.swift */,
 				C2B6DCD82109A2760016AB4E /* Main.storyboard */,
 				C2B6DCDB2109A2780016AB4E /* Assets.xcassets */,
 				C2B6DCDD2109A2780016AB4E /* LaunchScreen.storyboard */,
@@ -152,10 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C266E829226D7EAD00717469 /* YKDownLoadPopView.swift in Sources */,
-				C266E824226D7D9600717469 /* YKFileLoadPopViewController.swift in Sources */,
+				C266E824226D7D9600717469 /* FileDownLoadPopup.swift in Sources */,
 				C2B6DCD72109A2760016AB4E /* ViewController.swift in Sources */,
-				C266E825226D7D9600717469 /* FileDownLoader.swift in Sources */,
+				C266E825226D7D9600717469 /* NetworkService.swift in Sources */,
 				C2B6DCD52109A2760016AB4E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -301,13 +289,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J7GWXZ73NT;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FileDownLoader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.neighbor21.FileDownLoader;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.youngkwan-Ji.FileDownLoader";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -319,13 +307,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = J7GWXZ73NT;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = FileDownLoader/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = kr.co.neighbor21.FileDownLoader;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.github.youngkwan-Ji.FileDownLoader";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
